@@ -1,0 +1,105 @@
+@import url(https://fonts.bunny.net/css?family=abel:400);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html,body{
+    height: 100%;
+    font-family: 'Abel', sans-serif;
+    position: relative;
+}
+/* header styling */
+header{
+    position:fixed;
+    font-size: 20px;
+    background-color: aliceblue;
+    width: 100%;
+    color:black;
+    padding:10px 0;
+    text-align: center;
+    z-index: 1000; /* Keep it above other content */
+    
+}
+
+/* first-screen section */
+#first-screen{
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+.overlay{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);/* Adjust for perfect centering */
+    color: white;
+    text-align: center;
+    z-index: 500;
+}
+
+
+.company-name {
+    font-size: 10rem; /* Adjust font size as needed */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better visibility */
+}
+.image-container{
+    display: flex;
+    width: 100%;
+    height: 100%; /* Full height */
+
+}
+.image{
+    flex: 1;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+/* signup form section */
+
+#signup-form{
+    height: 100vh;
+    background-color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#signup-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+}
+
+#signup-form label{
+    margin-bottom: 5px;
+}
+
+#signup-form input,#signup-form textarea{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* about us section */
+.about-section{
+    height: 100vh;
+    background-color:#87CEFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* footer section */
+footer{
+    background-color: aquamarine;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
