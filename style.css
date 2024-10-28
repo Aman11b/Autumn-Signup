@@ -145,12 +145,12 @@ input,textarea{
 .error-message{
     color: red;
     font-size: 0.9rem;
-    height: 1rem;
-    margin-top: 0.25rem; /* Add some space above the error message */
+    margin-top: 0.1rem; /* Add some space above the error message */
+    margin-bottom: 1rem;
 }
 /* Optional: Add some basic styling to the form inputs */
 input {
-    padding: 0.5rem; /* Add padding for better usability */
+    margin-top: 2px;
     border-radius: 4px; /* Rounded corners */
     width: 100%; /* Full width inputs */
     box-sizing: border-box; /* Ensure padding doesn't affect total width */

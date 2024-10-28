@@ -1,10 +1,7 @@
-document.getElementById('form').addEventListener('submit',function(event){
-    event.preventDefault();
+const nameInput=document.getElementById('Name');
+const emailInput=document.getElementById('email');
 
-    let isValid=true;
-
-    // validate name
-    const nameInput=document.getElementById('Name');
+function validateName(){
     const nameError=document.getElementById('Name-error');
     const nameRegex=/^[A-Za-z\s]{3,}$/; //only letters and space
 
@@ -27,7 +24,35 @@ document.getElementById('form').addEventListener('submit',function(event){
         nameInput.classList.add('success');
         console.log(nameInput.classList);
     }
-    if(isValid){
-        alert("Form submitted successfully");
+
+}
+    
+
+function validateEmail(){
+    const emailError=document.getElementById('email-error');
+    const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    emailInput.classList.remove('error', 'success');
+
+    if(emailInput.value.trim()===''){
+        emailError.textContent='Email is required';
+        emailInput.classList.add('error');
+        emailError.classList.remove('success');
+        isValid=false;
+    }else if(!emailRegex.test(emailInput.value)){
+        emailError.textContent='Please enter valid email address';
+        emailInput.classList.add('error');
+        emailError.classList.remove('success');
+        isValid=false;
+    }else{
+        emailError.textContent = ''; // Clear error message
+        emailInput.classList.remove('error');
+        emailInput.classList.add('success'); // Add success class
     }
-});
+
+}
+ nameInput.addEventListener('input',validateName);
+ nameInput.addEventListener('blur',validateName);
+
+ emailInput.addEventListener('input',validateEmail);
+ emailInput.addEventListener('blur',validateEmail);
