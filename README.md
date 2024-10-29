@@ -1,4 +1,4 @@
-##🌟 Autumn Designers Signup Form
+## 🌟 Autumn Designers Signup Form
 
 Welcome to the **Autumn Designers** project! This responsive and visually appealing signup form is designed to provide users with a seamless registration experience, featuring dynamic validation and engaging design elements.
 
@@ -8,8 +8,6 @@ Welcome to the **Autumn Designers** project! This responsive and visually appeal
 
 - [🔍 Features](#features)
 - [🛠️ Technologies Used](#technologies-used)
-- [📥 Installation](#installation)
-- [🚀 Usage](#usage)
 - [🤝 Contributing](#contributing)
 - [📜 License](#license)
 - [🎉 Acknowledgments](#acknowledgments)
@@ -45,9 +43,9 @@ Welcome to the **Autumn Designers** project! This responsive and visually appeal
 4.Submit: Click the "Sign Up" button to complete your registration.
 
 ---
-##🤝 Contributing
+## 🤝 Contributing
 We welcome contributions to enhance this project! If you have suggestions or features you'd like to propose, please create a pull request or open an issue.
 
 ---
-##🎉 Acknowledgments
+## 🎉 Acknowledgments
 Special thanks to the following resources and tutorials that aided in the development of this project.
