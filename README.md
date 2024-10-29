@@ -2,18 +2,6 @@
 
 Welcome to the **Autumn Designers** project! This responsive and visually appealing signup form is designed to provide users with a seamless registration experience, featuring dynamic validation and engaging design elements.
 
----
-
-## 📋 Table of Contents
-
-- [🔍 Features](#features)
-- [🛠️ Technologies Used](#technologies-used)
-- [🤝 Contributing](#contributing)
-- [📜 License](#license)
-- [🎉 Acknowledgments](#acknowledgments)
-
----
-
 ## 🔍 Features
 
 - **Responsive Design**: Optimized for all devices, ensuring a consistent user experience.
