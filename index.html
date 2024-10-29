@@ -59,14 +59,29 @@
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-                <div class="error-message" id="password-error"></div>
+                    <!-- password requirements -->
+                <div id="password-guidelines">
+                    <p id="length-rule">&bull; At least 8 characters</p>
+                    <p id="uppercase-rule">&bull; At least one uppercase letter</p>
+                    <p id="lowercase-rule">&bull; At least one lowercase letter</p>
+                    <p id="number-rule">&bull; At least one number</p>
+                    <p id="special-rule">&bull; At least one special character</p>
+                </div>
+                    
+                <!-- password strength bar -->
+                <div class="strength-bar">
+                    <div id="strength-indicator"></div>
+                 </div>
+
+                
+                
 
                 <label for="confirmPassword">Confirm Password:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <div class="error-message" id="confirmPassword-error"></div>
                 
-                <!-- <label for="notes">Notes:</label>
-                <textarea id="notes" name="notes"></textarea> -->
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
 
                 <button type="submit">Sign Up</button>
             </form>
