@@ -24,7 +24,7 @@ Welcome to the **Autumn Designers** project! This responsive and visually appeal
 | **Video Background** | Engaging background media to capture user interest. |
 
 ---
-##🚀 Usage
+## 🚀 Usage
 1.Fill in the Signup Form: Enter your information into the form fields.
 2.Input Validation: The form will validate your inputs in real-time.
 3.Password Guidelines: Adhere to the password requirements for a secure signup.
