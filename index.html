@@ -46,46 +46,64 @@
             <!-- space for image -->
         </section>
         <!-- Signup Form Section -->
-        <section id="signup-form">
-            <h2>Signup Form</h2>
-            <form id="form" novalidate>
-                <label for="Name">First Name:</label>
-                <input type="text" id="Name" name="Name" required>
-                <div class="error-message" id="Name-error"></div>
+        <div class="signup-container">
+            <!-- signup flexbox -->
+            <div class="signup-heading">
+                <h2>Signup Form</h2>
+            </div>
+            <div class="form-container">
+                <form id="form" novalidate>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <div class="error-message" id="email-error"></div>
+                    <div class="name-email-btn">
+                        <div class="input-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="Name" name="name" required>
+                            <span class="error-message" id="Name-error"></span> <!-- Error message for name -->
+                        </div>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                    <!-- password requirements -->
-                <div id="password-guidelines">
-                    <p id="length-rule">&bull; At least 8 characters</p>
-                    <p id="uppercase-rule">&bull; At least one uppercase letter</p>
-                    <p id="lowercase-rule">&bull; At least one lowercase letter</p>
-                    <p id="number-rule">&bull; At least one number</p>
-                    <p id="special-rule">&bull; At least one special character</p>
-                </div>
-                    
-                <!-- password strength bar -->
-                <div class="strength-bar">
-                    <div id="strength-indicator"></div>
-                 </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span> <!-- Error message for email -->
+                        </div>
+                    </div>
 
-                
-                
+                    <div class="password-confirm-guidelines">
+                        <div class="password-confirm">
+                            <div class="password-strength">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required>
+                                <!-- password strength bar -->
+                                <div class="strength-bar">
+                                    <div id="strength-indicator"></div>
+                                </div>
+                            </div>
+    
+                            <div class="input-group">
+                                <label for="confirmPassword">Confirm Password:</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <div class="error-message" id="confirmPassword-error"></div>
+                            </div>
+                        </div>
+    
+                        <!-- password requirements -->
+                        <div id="password-guidelines">
+                            <p id="length-rule">&bull; At least 8 characters</p>
+                            <p id="uppercase-rule">&bull; At least one uppercase letter</p>
+                            <p id="lowercase-rule">&bull; At least one lowercase letter</p>
+                            <p id="number-rule">&bull; At least one number</p>
+                            <p id="special-rule">&bull; At least one special character</p>
+                        </div>
+                        
+                    </div>
 
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-                <div class="error-message" id="confirmPassword-error"></div>
-                
-                <label for="notes">Notes:</label>
-                <textarea id="notes" name="notes"></textarea>
-
-                <button type="submit">Sign Up</button>
-            </form>
-        </section>
+                    <label for="notes">Notes:</label>
+                    <textarea id="notes" name="notes"></textarea>
+    
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
     </main>
     <div class="class-about" id="about-can">
 

@@ -9,6 +9,7 @@ const guidelines={
     number: document.getElementById('number-rule'),
     special: document.getElementById('special-rule')
 };
+const confirmPasswordInput=document.getElementById('confirmPassword');
 
 // validation flag
 
@@ -74,44 +75,56 @@ function validatePassword(){
 
     // check length requirement
     if(password.length<8){
+        passwordInput.classList.add('error');
+        passwordInput.classList.remove('success');
         guidelines.length.style.color='red';
         isValid=false;
     }else{
+        passwordInput.classList.add('success');
+        passwordInput.classList.remove('error');
         guidelines.length.style.color='green';
     }
     // check other requirements
     if(!/[A-Z]/.test(password)){
+        passwordInput.classList.add('error');
+        passwordInput.classList.remove('success');
         guidelines.uppercase.style.color='red';
         isValid=false;
     }else{
+        passwordInput.classList.add('success');
+        passwordInput.classList.remove('error');
         guidelines.uppercase.style.color='green';
     }
     if(!/[a-z]/.test(password)){
+        passwordInput.classList.add('error');
+        passwordInput.classList.remove('success');
         guidelines.lowercase.style.color='red';
         isValid=false;
     }else{
+        passwordInput.classList.add('success');
+        passwordInput.classList.remove('error');
         guidelines.lowercase.style.color='green';
     }
     if(!/\d/.test(password)){
+        passwordInput.classList.add('error');
+        passwordInput.classList.remove('success');
         guidelines.number.style.color='red';
         isValid=false;
     }else{
+        passwordInput.classList.add('success');
+        passwordInput.classList.remove('error');
         guidelines.number.style.color='green';
     }
     if(!/[!@#$%^&*(),.?:{}|<>]/.test(password)){
+        passwordInput.classList.add('error');
+        passwordInput.classList.remove('success');
         guidelines.special.style.color='red';
         isValid=false;
     }else{
-        guidelines.special.style.color='green';
-    }
-    if (isValid) {
         passwordInput.classList.add('success');
         passwordInput.classList.remove('error');
-    } else {
-        passwordInput.classList.add('error');
-        passwordInput.classList.remove('success');
+        guidelines.special.style.color='green';
     }
-
 
     updateStrengthIndicator(password);
 }
@@ -140,11 +153,37 @@ function updateStrengthIndicator(password){
 
 }
 
+function validateConfirmPassword(){
+    const confirmPasswordError=document.getElementById('confirmPassword-error');
+
+    confirmPasswordInput.classList.remove('error','success');
+
+    if(confirmPasswordInput.value.trim()===''){
+        confirmPasswordError.textContent='Confirm your Password';
+        confirmPasswordInput.classList.remove('success');
+        confirmPasswordInput.classList.add('error');
+
+        isValid=false;
+    }else if(confirmPasswordInput.value===passwordInput.value){
+        confirmPasswordError.textContent='';
+        confirmPasswordInput.classList.remove('error');
+        confirmPasswordInput.classList.add('success');
+    }else{
+        confirmPasswordError.textContent='Password not matching';
+        confirmPasswordInput.classList.remove('success');
+        confirmPasswordInput.classList.add('error');
+
+    }
+}
+
 passwordInput.addEventListener('input', validatePassword);
 passwordInput.addEventListener('blur', validatePassword);
 
- nameInput.addEventListener('input',validateName);
- nameInput.addEventListener('blur',validateName);
+nameInput.addEventListener('input',validateName);
+nameInput.addEventListener('blur',validateName);
 
- emailInput.addEventListener('input',validateEmail);
- emailInput.addEventListener('blur',validateEmail);
+emailInput.addEventListener('input',validateEmail);
+emailInput.addEventListener('blur',validateEmail);
+
+confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+confirmPasswordInput.addEventListener('blur', validateConfirmPassword);

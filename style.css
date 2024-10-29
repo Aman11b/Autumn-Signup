@@ -16,14 +16,11 @@ header{
     justify-content: center;
     position:fixed;
     top: 0;
-    font-size: 20px;
-    background-image: url(../Autumn-Signup/resources/4.jpg);
-    overflow: hidden;
     width: 100%;
     height: 10%;
+    background-image: url(../Autumn-Signup/resources/4.jpg);
     color:white;
     padding:0 20px;
-    text-align: center;
     z-index: 1000; /* Keep it above other content */
     border: 2px solid white;
 }
@@ -41,8 +38,6 @@ header{
     list-style: none;
     display: flex;
     gap: 1rem;
-    margin: 0;
-    padding: 0;
 }
 .nav-btn{
     padding: 0.5rem 1rem;
@@ -103,143 +98,167 @@ main{
 
 }
 #Signup-image{
-    display: flex;
     width: 30%;
     height: 100vh;
     background-image: url(../Autumn-Signup/resources/6.jpg);
     background-size: cover;
 }
-
-#signup-form{
-    height: 100vh;
+.signup-container{
     width: 70%;
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    height: 100vh;
+    margin-bottom: 0rem; /* Reduce from 1.5rem to 1rem */
+    padding: 2rem;
+    background-color: rgba(226, 190, 190, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
-
-
-/* signup form section */
-
-#signup-form form{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+.signup-heading{
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.8rem;
 }
-
-#signup-form label{
-    margin: 0.5rem 0 0.25rem;
-}
-
-
-input,textarea{
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    transition: border-color 0.3s; /* Smooth transition for border color */
-}
-.error-message{
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 0.1rem; /* Add some space above the error message */
-    margin-bottom: 1rem;
-}
-/* Optional: Add some basic styling to the form inputs */
-input {
-    margin-top: 2px;
-    border-radius: 4px; /* Rounded corners */
-    width: 100%; /* Full width inputs */
-    box-sizing: border-box; /* Ensure padding doesn't affect total width */
-}
-
-input[type="password"]{
-    display: inline-block;
-    width: calc(100%-220px);
-    margin-bottom: 1rem;
-}
-
-input:focus{
-    outline: none; /* Remove default outline */
-    border: 2px solid #007BFF; /* Blue border when focused */
-}
-input.error{
-    border: 2px solid red; /* Red border for errors */
-}
-input.success{
-    border: 2px solid green; /* Green border for success */
-}
-
-#password-guidelines{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    align-self: flex-start;
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-    color: grey;
-}
-#password-guidelines p{
-    margin: 0;
-    padding: 0;
-}
-#password-guidelines p.valid{
-    color: green;
-}
-#password-guidelines p.invalid{
-    color: red;
-}
-.strength-bar{
+.form-container{
     width: 100%;
-    height: 10px;
-    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Stack label, input, and error message vertically */
+    width: 100%; /* Make input group take full width */
+}
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+textarea {
+    resize: vertical;
+}
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+.name-email-btn, .password-confirm-guidelines {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+.password-guidelines {
+    color: #666;
+    font-size: 0.9rem;
+}
+.strength-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
     border-radius: 5px;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
     overflow:hidden;
 }
-#strength-indicator{
+#strength-indicator {
     height: 100%;
     width: 0;
-    background-color: red;
     border-radius: 5px;
     transition: width 0.3s;
+    
 }
-/* Button Styles */
+/* Notes section styling */
+#notes {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.password-confirm-guidelines {
+    display: flex;
+    justify-content: space-between; /* Space between password fields and guidelines */
+    margin-top: 20px; /* Space above this section */
+}
+
+.password-confirm {
+    flex: 1; /* Take up 50% of the container */
+    margin-right: 20px; /* Space between fields and guidelines */
+}
+
+#password-guidelines {
+    flex: 1; /* Take up 50% of the container */
+    /* Additional styling can go here */
+}
+
+
+
+/* Aligning error messages directly below inputs */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.2rem; /* Adjust margin to reduce space between input and error message */
+    margin-bottom: 1rem;
+}
+
+/* Button styling */
 button {
-    margin-top: 2rem;
-    padding: 0.7rem;
+    width: 100%;
+    padding: 0.8rem;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s,transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
 }
 
 button:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Scale effect on hover */
+    transform: scale(1.05);
 }
-.class-about{
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .name-email-btn, .password-confirm-guidelines {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+input:focus {
+    outline: none;
+    border: 2px solid #007BFF;
+}
+
+input.error {
+    border: 2px solid red;
+}
+
+input.success {
+    border: 2px solid green;
+}
+/* About section styling */
+.class-about {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: relative;
     background: 
         url(../Autumn-Signup/resources/w.jpg) left center/49.9% no-repeat,
         url(../Autumn-Signup/resources/5.jpg) right center/49.9% no-repeat;
-    background-size: 50% 100%, 50% 100%, 100% 100%;
-    gap: 1px;
+    background-size: 50% 100%;
     border: 2px solid white;
-
 }
-
-/* about us section */
-.about-section{
+.about-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -248,35 +267,19 @@ button:hover {
     width: 70%;
     text-align: center;
     padding: 3rem;
-    color:black;
+    color: black;
     background-color: rgba(255, 255, 255, 0.8);
-    border-radius:8px;
-    z-index:1;
+    border-radius: 8px;
+    z-index: 1;
     border: 2px solid white;
 }
 
-/* footer section */
-footer{
+/* Footer styling */
+footer {
     background-image: url(../Autumn-Signup/resources/4.jpg);
     color: white;
     font-size: 20px;
     text-align: center;
     padding: 20px 0;
     border: 2px solid white;
-}
-
-@media(max-width:768px){
-    #signup-form{
-        width:90%;
-    }
-    .company-name{
-        font-size: 5rem;
-    }
-    .overlay{
-        padding: 1rem;
-    }
-    .about-section{
-        width: 90%;
-        padding: 1.5rem;
-    }
 }
