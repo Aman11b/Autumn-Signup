@@ -10,10 +10,15 @@ const guidelines={
     special: document.getElementById('special-rule')
 };
 const confirmPasswordInput=document.getElementById('confirmPassword');
+const numberInput=document.getElementById('number');
+const form=document.getElementById('form');
+const passwordGuidelines = document.getElementById('password-guidelines');
+const guidelinesImage = document.getElementById('guidelines-image');
 
 // validation flag
 
 let isValid=true; // Flag to track overall validation status
+let imageHidden = false;
 
 function validateName(){
     const nameError=document.getElementById('Name-error');
@@ -127,6 +132,19 @@ function validatePassword(){
     }
 
     updateStrengthIndicator(password);
+
+    const guidelinesDive=document.getElementById('password-guidelines');
+    const guidelinesImage=document.getElementById('guidelines-image');
+
+    // Manage visibility of guidelines and image
+    if (isValid) {
+        document.getElementById('password-guidelines').classList.add('guidelines-visible', 'fade-in'); // Show guidelines
+        document.getElementById('guidelines-image').classList.add('fade-out'); // Hide image
+    } else {
+        document.getElementById('password-guidelines').classList.remove('guidelines-visible', 'fade-in'); // Hide guidelines
+        document.getElementById('guidelines-image').classList.remove('fade-out'); // Show image
+    }
+
 }
 
 function updateStrengthIndicator(password){
@@ -176,6 +194,28 @@ function validateConfirmPassword(){
     }
 }
 
+function validatePhoneNumber(){
+    const phoneNoError=document.getElementById('number-error');
+    const numberRegex=/\d{10,}/;
+
+    numberInput.classList.remove('error','success');
+    phoneNoError.textContent='';
+
+    if(numberInput.value.trim()===''){
+        phoneNoError.textContent='Phone number is required';
+        numberInput.classList.add('error');
+        numberInput.classList.remove('success');
+        isValid=false;
+    }else if(!numberRegex.test(numberInput.value.trim())){
+        phoneNoError.textContent='Please enter a valid 10-digit phone number';
+        numberInput.classList.add('error');
+        numberInput.classList.remove('success');
+        isValid=true;
+    }else{
+        numberInput.classList.add('success');
+        numberInput.classList.remove('error');
+    }
+}
 passwordInput.addEventListener('input', validatePassword);
 passwordInput.addEventListener('blur', validatePassword);
 
@@ -187,3 +227,63 @@ emailInput.addEventListener('blur',validateEmail);
 
 confirmPasswordInput.addEventListener('input', validateConfirmPassword);
 confirmPasswordInput.addEventListener('blur', validateConfirmPassword);
+
+numberInput.addEventListener('input', validatePhoneNumber);
+numberInput.addEventListener('blur', validatePhoneNumber);
+
+form.addEventListener('submit',function(event){
+    isValid=true;
+
+    validateName();
+    validateEmail();
+    validatePassword();
+    validateConfirmPassword();
+    validatePhoneNumber();
+
+    if(!isValid){
+        event.preventDefault();
+        alert("Please fill the form");
+    }
+});
+
+passwordInput.addEventListener('focus', () => {
+    // Remove the guidelines image from the DOM
+    if (!imageHidden) {
+        guidelinesImage.remove(); // Completely remove the image
+        passwordGuidelines.classList.remove();
+        passwordGuidelines.classList.add('guidelines-visible'); // Show guidelines container
+        passwordGuidelines.style.display = 'flex'; // Set display to flex to make it visible
+        passwordGuidelines.style.opacity = '1'; // Make the guidelines visible
+        imageHidden = true; // Mark the image as hidden
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    document.body.style.overflow = 'hidden';
+    // Create the loading screen div
+    const loadingScreen = document.createElement('div');
+    loadingScreen.className = 'loading-screen';
+    
+    // Create the company name element
+    const companyName = document.createElement('h1');
+    companyName.className = 'company-name';
+    companyName.textContent = 'Autumn';
+    
+    // Append the company name to the loading screen
+    loadingScreen.appendChild(companyName);
+    
+    // Append the loading screen to the body
+    document.body.appendChild(loadingScreen);
+
+    // Wait a moment before fading out the loading screen
+    setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+
+        // Remove the loading screen from the DOM after the fade-out transition
+        loadingScreen.addEventListener('transitionend', () => {
+            loadingScreen.remove();
+            document.body.style.overflow = 'auto'; // Enable scrolling again
+        });
+    }, 1000); // Adjust the duration as needed
+});
