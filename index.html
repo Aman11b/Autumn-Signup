@@ -5,57 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autumn</title>
     <link rel="stylesheet" href="../Autumn-Signup/style.css">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
 </head>
 <body>
 
-    <!--first screen section with overlay-->
+    <!-- First screen section with overlay -->
     <section id="first-screen">
         <!-- Header Section -->
         <header id="header-section">
             <div class="header-heading">
-                <h1>Autumn Designers</h1>
+                <h1>Autumn Designers</h1> <!-- Company name heading -->
             </div>
             <div class="navigation">
-                <!-- navigation bar -->
+                <!-- Navigation bar for site navigation -->
                 <nav>
                     <ul>
-                        <li><a href="#signup" class="nav-btn">Signup</a></li>
-                        <li><a href="#about-can" class="nav-btn">About Us</a></li>
+                        <li><a href="#signup" class="nav-btn">Signup</a></li> <!-- Signup link -->
+                        <li><a href="#about-can" class="nav-btn">About Us</a></li> <!-- About Us link -->
                     </ul>
                 </nav>
             </div>
         </header>
         <div class="overlay">
-            <h1 class="company-name">Autumn</h1>
+            <h1 class="company-name">Autumn</h1> <!-- Overlay company name -->
         </div>
         <div class="image-container">
-            <img src="../Autumn-Signup/resources/q.jpg" alt="image 1" class="image">
-        </section>
+            <img src="../Autumn-Signup/resources/q.jpg" alt="image 1" class="image"> <!-- Main image -->
+        </div>
+    </section>
 
     <!-- Main Content Section -->
     <main id='signup'>
         <section id="Signup-image">
-            <!-- space for image -->
+            <!-- Placeholder for image related to signup -->
         </section>
         <!-- Signup Form Section -->
         <div class="signup-container">
-            <!-- signup flexbox -->
+            <!-- Signup form heading -->
             <div class="signup-heading">
                 <h2>Signup Form</h2>
             </div>
             <div class="form-container">
-                <form id="form" novalidate>
+                <form id="form" novalidate> <!-- Form for user signup -->
 
                     <div class="name-email-btn">
                         <div class="input-group">
                             <label for="name" class="floating-label">Name:</label>
-                            <input type="text" id="Name" name="name" placeholder="Enter your name" required>
+                            <input type="text" id="Name" name="name" placeholder="Enter your name" required> <!-- Input for user's name -->
                             <span class="error-message" id="Name-error"></span> <!-- Error message for name -->
                         </div>
 
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your Email ID"required>
+                            <input type="email" id="email" name="email" placeholder="Enter your Email ID" required> <!-- Input for user's email -->
                             <span class="error-message" id="email-error"></span> <!-- Error message for email -->
                         </div>
                     </div>
@@ -64,64 +69,74 @@
                         <div class="password-confirm">
                             <div class="password-strength">
                                 <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
-                                <!-- password strength bar -->
+                                <input type="password" id="password" name="password" placeholder="Enter your Password" required> <!-- Input for user's password -->
+                                <!-- Password strength bar -->
                                 <div class="strength-bar">
-                                    <div id="strength-indicator"></div>
+                                    <div id="strength-indicator"></div> <!-- Indicator for password strength -->
                                 </div>
                             </div>
     
                             <div class="input-group">
                                 <label for="confirmPassword">Confirm Password:</label>
-                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Retype your Password" required>
-                                <div class="error-message" id="confirmPassword-error"></div>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Retype your Password" required> <!-- Input for password confirmation -->
+                                <div class="error-message" id="confirmPassword-error"></div> <!-- Error message for password confirmation -->
                             </div>
                         </div>
     
-                        <!-- password requirements -->
-                        <div id="password-guidelines" class="password-guidelines" >
-                            <p id="length-rule">&bull; At least 8 characters</p>
-                            <p id="uppercase-rule">&bull; At least one uppercase letter</p>
-                            <p id="lowercase-rule">&bull; At least one lowercase letter</p>
-                            <p id="number-rule">&bull; At least one number</p>
-                            <p id="special-rule">&bull; At least one special character</p>
+                        <!-- Password requirements -->
+                        <div id="password-guidelines" class="password-guidelines">
+                            <p id="length-rule">&bull; At least 8 characters</p> <!-- Length rule -->
+                            <p id="uppercase-rule">&bull; At least one uppercase letter</p> <!-- Uppercase rule -->
+                            <p id="lowercase-rule">&bull; At least one lowercase letter</p> <!-- Lowercase rule -->
+                            <p id="number-rule">&bull; At least one number</p> <!-- Number rule -->
+                            <p id="special-rule">&bull; At least one special character</p> <!-- Special character rule -->
                         </div>
 
-                        <img id="guidelines-image" src="../Autumn-Signup/resources/c.gif" alt="Password Guidelines Image">
+                        <img id="guidelines-image" src="../Autumn-Signup/resources/g.gif" alt="Password Guidelines Image"> <!-- Image for password guidelines -->
                         
                     </div>
                     <div class="input-group">
                         <label for="number">Phone Number</label>
-                        <input type="tel" id="number" name="number" placeholder="Enter your phone number" required />
-                        <div class="error-message" id="number-error"></div>
+                        <input type="tel" id="number" name="number" placeholder="Enter your phone number" required /> <!-- Input for phone number -->
+                        <div class="error-message" id="number-error"></div> <!-- Error message for phone number -->
                     </div>
     
-                    <button type="submit">Sign Up</button>
+                    <button type="submit">Sign Up</button> <!-- Signup button -->
                 </form>
             </div>
         </div>
     </main>
     <div class="class-about" id="about-can">
-        <video autoplay loop muted playsinline class="background-video">
-            <source src="../Autumn-Signup/resources/n.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+        <video autoplay loop muted playsinline class="background-video"> <!-- Background video -->
+            <source src="../Autumn-Signup/resources/n.mp4" type="video/mp4"> <!-- Video source -->
+            Your browser does not support the video tag. <!-- Fallback message for unsupported browsers -->
         </video>
 
         <!-- About Us Section -->
         <section class="about-section" id="about">
             <h2>About Us</h2>
-            <p>Autumn Designs is dedicated to bringing innovative design solutions to life, infusing every project with creativity and expertise.</p>
+            <br><br>
+            <p>Welcome to <strong>Autumn Designs</strong>—your go-to pseudo-designing company! We pride ourselves on our unique knack for questionable design choices and brilliantly half-baked ideas. While we might not be the best in the business, we promise to cook up something that’s at least a step up—just hire us, and we’ll sprinkle some magic (or maybe just some glitter) on your project!</p>
+            <br>
+
+            <p>Big thanks to all the resource wizards who helped turn our wild ideas into something semi-coherent! Let’s create some magic together—preferably without any clipart cats!</p>
+            <br>
+
+            <p>If you like what you see and are looking for a project to collaborate on, don’t be shy—<strong>contact me</strong>! I’m excited to turn your ideas into reality!</p>
         </section>
     </div>
+
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Autumn Designs</p>
+        <p>&copy; 2024 Autumn Designs</p> <!-- Copyright notice -->
+        <p>
+            <a href="https://www.linkedin.com/in/aman-singh-120a76234/" target="_blank"> <!-- LinkedIn link -->
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </p>
     </footer>
 
-    
-    <script src="../Autumn-Signup/script.js"></script>
-    
-
+    <script src="../Autumn-Signup/script.js"></script> <!-- Link to external JavaScript file -->
     
 </body>
 </html>

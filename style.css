@@ -18,7 +18,7 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     opacity: 1; /* Start fully visible */
-    transition: opacity 7s ease-in-out; /* Smooth fade effect */
+    transition: opacity 5s ease-in-out; /* Smooth fade effect */
     z-index: 9999; /* Stay above all other content */
 }
 
@@ -37,7 +37,7 @@ html,body{
     --accent-color: #D2691E; /* Earthy brown-orange for buttons/links */
     --background-color: #FAF3E0; /* Light warm tone */
     --text-color: #4A403A; /* Dark earthy color */
-    --highlight-color: #FFD07F; /* Light amber highlight */
+    --highlight-color: #FFEEAD; /* Light amber highlight */
 }
 body {
     background-color: white;
@@ -60,7 +60,7 @@ header{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color); /* Accent color for brand visibility */
 }
@@ -75,7 +75,7 @@ header{
     gap: 1rem;
 }
 .nav-btn{
-    padding: 0.3rem .8rem;
+    padding: 0.4rem 1rem;
     color: var(--text-color);
     background-color: transparent;
     border: 2px solid var(--text-color);
@@ -167,7 +167,7 @@ main{
     align-items: center;
     padding: 2rem;
     border-radius: 20px;
-    background-color: rgba(226, 190, 190, 0.5);
+    background-color: #FAF3E0; /* Light warm tone */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-wrap:nowrap;
     margin-top: 100px;
@@ -259,14 +259,14 @@ textarea {
     display: flex;
     flex-direction: column;
     opacity: 1; /* Fully visible */
-    transition: opacity 0.3s ease-in-out; /* Add transition here */
+    transition: opacity 1s ease-in-out; /* Add transition here */
 }
 
 #guidelines-image {
     width: 100%; /* Make the image responsive */
     max-width: 300px; /* Limit maximum width */
     margin-top: 10px; /* Space above the image */
-    transition: opacity 0.3s ease-in-out; /* Add  here */
+    transition: opacity 1s ease-in-out; /* Add  here */
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -274,7 +274,7 @@ textarea {
 .strength-bar {
     width: 100%;
     height: 8px;
-    background-color: #e0e0e0;
+    background-color:#FAF3E0;
     border-radius: 5px;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -297,22 +297,23 @@ textarea {
 
 /* Button styling */
 button {
-    width: 100%;
+    width: 50%;
     padding: 0.8rem;
-    background-color: var(--accent-color);
+    background-color: #FFAD60;
     color: var(--background-color);
     border: none;
     border-radius: 4px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.4s, transform 0.3s;
     margin-top: 0.8rem;
+    margin-left: 12rem;
 }
 
 button:hover {
-    background-color: var(--highlight-color);
-    color: var(--text-color);
+    background-color: #795757;
+    color: wheat;
     transform: scale(1.05);
 }
 
@@ -361,16 +362,18 @@ input.success {
 .about-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 50%;
-    width: 50%;
+    height: 70%;
+    width: 60%;
     text-align: center;
-    padding: 3rem;
+    padding: 1rem;
     color: var(--text-color);
-    background-color: rgba(255, 255, 255, 0.2); /* Soft background for readability */
+    background-color: rgba(255, 255, 255, 0.6); /* Soft background for readability */
     border-radius: 8px;
     z-index: 1;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
 }
 .about-section:hover{
     background-color: rgba(255, 255, 255, 0.8);
@@ -378,13 +381,30 @@ input.success {
 
 /* Footer styling */
 footer {
+    display: flex;
     font-size: 1.2rem;
     text-align: center;
-    padding: 20px;
-    background-color: rgba(241, 227, 218, 0.7);
     color: var(--text-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 2;
+    width: 100%;
+    height: 7%;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: rgba(241, 227, 218, 0.7); /* color */
+    
+}
+
+footer a {
+    text-decoration: none; /* Remove underline */
+    color: #0077b5; /* LinkedIn blue color */
+    font-weight: bold; /* Make it bold */
+    
+}
+
+footer a i {
+    margin-right: 5px; /* Space between icon and text */
+
     
 }
